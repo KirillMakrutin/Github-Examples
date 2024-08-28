@@ -1,8 +1,8 @@
-name: example-workflow
+name: Conditional
 on: [push]
 jobs:
   hello-world:
-    if: github.repository == 'KirillMakrutin/Github-Examples'
+    if: github.repository == 'OtherAccount/Github-Examples'
     runs-on: ubuntu-latest
     steps:
       - name: "Hello World"
