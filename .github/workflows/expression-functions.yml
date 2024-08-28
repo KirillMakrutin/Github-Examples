@@ -4,9 +4,7 @@ on:
   push:
     branches:
       - main
-  issues:
-    types: [opened, labeled]
-
+      
 jobs:
   expression-functions:
     runs-on: ubuntu-latest
@@ -38,7 +36,7 @@ jobs:
           echo "Parsed JSON: ${{ fromJSON('{"hello":"world"}').hello }}"
       - name: Hash files
         run: |
-          echo "Hash of files: ${{ hashFiles('**/package-lock.json', '**/Gemfile.lock') }}
+          echo "Hash of files: ${{ hashFiles('**/*.yml', '**/*.md') }}
       - name: The job has succeeded
         if: ${{ success() }}
         run: |
